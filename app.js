@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
-const db = process.env.MONGODB_URI || 'test'
+const db = process.env.MONGODB_URI
 mongoose.connect(db,
     {
         useNewUrlParser: true,
