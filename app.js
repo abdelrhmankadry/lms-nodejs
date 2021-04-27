@@ -10,8 +10,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
-
-mongoose.connect(config.MONGODB_URI,
+const db = process.env.MONGODB_URI || 'test'
+mongoose.connect(db,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
