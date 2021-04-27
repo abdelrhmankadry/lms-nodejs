@@ -46,7 +46,7 @@ app.post('/web/courses', courseController.postCourse);
 
 app.post('/web/students', studentController.postStudent);
 const host = '0.0.0.0';
-const port = process.env.port || 3000
+const port = process.env.port || 3003
 
 app.listen(port , host, () => console.log(`Listeneing on port ${port}......`) /* optionally a function that called when the app starts listening to the given port */);
 
