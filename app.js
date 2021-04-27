@@ -50,5 +50,8 @@ app.post('/web/students', studentController.postStudent);
 
 // app.listen(port , host, () => console.log(`Listeneing on port ${port}......`) /* optionally a function that called when the app starts listening to the given port */);
 
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
+const { PORT=3000, LOCAL_ADDRESS='0.0.0.0' } = process.env
+server.listen(PORT, LOCAL_ADDRESS, () => {
+  const address = server.address();
+  console.log('server listening at', address);
+});
